@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cafe Form</title>
+    <script type="text/javascript" src="formcalculations.js"></script>
+    <link href="cafeform.css" rel="stylesheet" type="text/css" />
+</head>
+<body onload='hideTotal()'>
+    <div id="wrap">
+        <form action="" id="cafeform" onsubmit="return false;">
+        <div>
+            <div class="cont_order">
+               <fieldset>
+                <legend>카페 메뉴 계산기</legend>
+                <label >음료 종류</label>
+                <label class='radiolabel'><input type="radio"  name="selecteddrink" value="menu1" onclick="calculateTotal()" />아이스 카페 아메리카노 (4500원)</label><br/>
+                <label class='radiolabel'><input type="radio"  name="selecteddrink" value="menu2" onclick="calculateTotal()" />아이스 자몽 허니 블랙 티 (5700원)</label><br/>
+                <label class='radiolabel'><input type="radio"  name="selecteddrink" value="menu3" onclick="calculateTotal()" />시그니처 초콜릿(5700원)</label><br/>
+                <label class='radiolabel'><input type="radio"  name="selecteddrink" value="menu4" onclick="calculateTotal()" />제주 까망 라떼(7200원)</label><br/>
+                <br/>
+                <label >퍼스널 옵션</label>
+         
+                <select id="filling" name='filling' onchange="calculateTotal()">
+                <option value="None">선택안함</option>
+                <option value="coffee">커피(1000원)</option>
+                <option value="syrup">시럽(500원)</option>
+                <option value="milk">우유(1000원)</option>
+                <option value="cream">휘핑크림(500원)</option>
+                <option value="Buttercream">버터크림(1000원)</option>
+                <option value="caramel">카라멜(1000원)</option>
+                <option value="mocka">모카(1000원)</option>
+                <option value="Mint">민트(1000원)</option>
+                <option value="Chocolate">초콜릿(1000원)</option>
+               </select>
+                <br/>
+                <p>
+                <label for='includeices' class="inlinelabel">얼음 추가(100원)</label>
+               <input type="checkbox" id="includeices" name='includeices' onclick="calculateTotal()" />
+               </p>
+               
+                <p>
+                <label class="inlinelabel" for='plasticcup'>일회용 컵 환경부담금(500원)</label>
+                <input type="checkbox" id="plasticcup" name="plasticcup" onclick="calculateTotal()" />
+                </p>
+                <div id="totalPrice"></div>
+                
+                </fieldset>
+            </div>
+            
+        	<div class="cont_details">
+            	<fieldset>
+                <legend>연락처 세부정보</legend>
+                <label for='name'>이름</label>
+                <input type="text" id="name" name='name' />
+                <br/>
+                <label for='address'>배달주소</label>
+                <input type="text" id="address" name='address' />
+                <br/>
+                <label for='phonenumber'>전화번호</label>
+                <input type="text"  id="phonenumber" name='phonenumber'/>
+                <br/>
+                <label for='request'>요청사항</label>
+                <input type="text"  id="request" name='request'/>
+                <br/>
+                </fieldset>
+            </div>
+            <input type='submit' id='submit' value='주문하기' onclick="calculateTotal()" />
+        </div>  
+       </form>
+	</div>
+</body>
+</html>
